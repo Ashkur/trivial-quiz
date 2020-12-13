@@ -9,7 +9,7 @@
 
     & > div {
       text-align: center;
-      font-size: 2rem;
+      font-size: var(--font-2xl);
       font-weight: bold;
       color: var(--color-orange);
     }
@@ -30,7 +30,7 @@
   &__try-again {
     margin-top: 5.188rem;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: var(--font-2xl);
     display: inline-block;
     color: var(--color-orange);
     cursor: pointer;
