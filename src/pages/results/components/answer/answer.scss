@@ -1,0 +1,75 @@
+.answer {
+  min-height: 166px;
+  padding: 0.5rem 0.875rem;
+  position: relative;
+  overflow: hidden;
+  transition: var(--default-transition);
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center left;
+    left: 0;
+    top: 0;
+    opacity: 0.34;    
+  }
+
+  &__correct-answer, &__question {
+    max-width: 520px;
+  }
+
+  &__correct-answer {
+    text-align: right;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: var(--font-xl);
+  }
+
+  &__question {
+    position: relative;
+    z-index: 2;
+    color: var(--color-white);
+  }
+
+  &--correct {
+    background-color: rgba(29, 181, 59, 0.64);
+
+    &::before {
+      background-image: url('../../icons/grin-beam.svg');
+    }
+
+    .answer__correct-answer {
+      color: var(--color-green);
+    }
+  }
+
+  &--incorrect {
+    background-color:var(--color-red);
+    &::before {
+      background-image: url('../../icons/frown-regular.svg');
+      opacity: 0.20;
+    }
+
+    .answer__correct-answer {
+      color: var(--color-red-100);
+    }
+  }
+}
+
+@media (min-width: 540px) {
+  .answer {
+    padding: 1.125rem 2.813rem;
+
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+
+    &::before {
+      background-position: center right;
+    }
+  }
+}

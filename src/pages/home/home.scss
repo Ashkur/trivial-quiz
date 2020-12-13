@@ -1,0 +1,60 @@
+.home {
+  padding: 2.5rem 0.5rem;
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--color-orange)
+  }
+
+  &__presentation {
+    font-size: 1.125rem;
+    text-align: center;
+    max-width: 192px;
+    margin: 0 auto;
+    margin-top: 4.25rem;
+    color: var(--color-orange)
+  }
+
+  &__start-button {
+    border-radius: var(--radius);    
+    padding: 5px 0;
+    width: 180px;
+    color: var(--color-white);
+    font-size: 1.5rem;
+    margin: 6.375rem auto;
+    display: block;
+    transition: var(--default-transition);
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: var(--color-gray);
+    pointer-events: none;
+
+    &:hover {
+      filter: brightness(1.2);
+    }
+
+    &--enabled {
+      background-color: var(--color-orange);
+      pointer-events: auto;
+    }
+
+    &--clicked {
+      animation: pulse 700ms;
+    }
+  }
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(249, 105, 14, 0.7);
+	}
+
+	100% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+	}
+}
